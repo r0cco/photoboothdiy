@@ -52,8 +52,8 @@ screenPicture = pygame.display.set_mode((infoObject.current_w,infoObject.current
 backgroundPicture = pygame.Surface(screenPicture.get_size())  # Create the background object
 backgroundPicture = background.convert()  # Convert it to a background
 
-transform_x = infoObject.current_w # how wide to scale the jpg when replaying
-transfrom_y = infoObject.current_h # how high to scale the jpg when replaying
+transform_x = infoObject.current_w # how wide to scale the png when replaying
+transfrom_y = infoObject.current_h # how high to scale the png when replaying
 
 camera = picamera.PiCamera()
 # Initialise the camera object
@@ -295,7 +295,7 @@ def CapturePicture():
         UpdateDisplay()
         imagecounter = imagecounter + 1
         ts = time.time()
-        filename = os.path.join(imagefolder, 'images', str(imagecounter)+"_"+str(ts) + '.jpg')
+        filename = os.path.join(imagefolder, 'images', str(imagecounter)+"_"+str(ts) + '.png')
         camera.capture(filename, resize=(IMAGE_WIDTH, IMAGE_HEIGHT))
         camera.stop_preview()
         ShowPicture(filename, 2)
