@@ -351,7 +351,7 @@ def TakePictures():
         bgimage2 = bgimage.rotate(90)
         bgimage2.save('/home/pi/Desktop/tempprint.png')
         ImageShowed = False
-        Message = "Appuyez sur le bouton pour imprimer"
+        Message = "Press the button to print"
         UpdateDisplay()
         time.sleep(1)
         Message = ""
@@ -359,7 +359,7 @@ def TakePictures():
         Printing = False
         WaitForPrintingEvent()
         Numeral = ""
-	Message = ""
+	Message = "Press the button to print"
 	print(Printing)
         if Printing:
                 if (TotalImageCount <= PhotosPerCart):
@@ -422,7 +422,7 @@ def WaitForPrintingEvent():
                     return        
         BackgroundColor = ""
         Numeral = str(countDown)
-        Message = ""
+        Message = "Press the button to print"
         UpdateDisplay()        
         countDown = countDown - 1
         time.sleep(1)
