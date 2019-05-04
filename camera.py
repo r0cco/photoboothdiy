@@ -338,7 +338,7 @@ def TakePictures():
         image1 = PIL.Image.open(filename1)
         image2 = PIL.Image.open(filename2)
         image3 = PIL.Image.open(filename3)
-        image3 = PIL.Image.open(filename4)   
+        image4 = PIL.Image.open(filename4)   
         TotalImageCount = TotalImageCount + 1
 	
         bgimage.paste(image1, (625, 30))
