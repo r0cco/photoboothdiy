@@ -282,7 +282,7 @@ def CapturePicture():
 	for x in range(3, -1, -1):
                 if x == 0:                        
                         Numeral = ""
-                        Message = "PRENEZ LA POSE"
+                        Message = "STRIKE A POSE!"
                 else:                        
                         Numeral = str(x)
                         Message = ""                
@@ -329,7 +329,7 @@ def TakePictures():
         filename3 = CapturePicture()
 
         CountDownPhoto = ""
-        Message = "Attendez svp..."
+        Message = "Please wait..."
         UpdateDisplay()
 
         image1 = PIL.Image.open(filename1)
@@ -370,7 +370,7 @@ def TakePictures():
                                 printers = conn.getPrinters()
                                 # select printer 0
                                 printer_name = printers.keys()[0]
-                                Message = "Impression en cours..."
+                                Message = "Printing in progress..."
                                 UpdateDisplay()
                                 time.sleep(1)
                                 # print the buffer file
@@ -378,14 +378,14 @@ def TakePictures():
                                 if printqueuelength > 1:
                                         ShowPicture('/home/pi/Desktop/tempprint.png',3)
                                         conn.enablePrinter(printer_name)
-                                        Message = "Impression impossible"                
+                                        Message = "Error Printing!"                
                                         UpdateDisplay()
                                         time.sleep(1)
                                 else:
                                         conn.printFile(printer_name, '/home/pi/Desktop/tempprint.png', "PhotoBooth", {})
                                         time.sleep(40)            
                 else:
-                        Message = "Nous vous enverrons vos photos"
+                        Message = "We will send you your photos"
                         Numeral = ""
                         UpdateDisplay()
                         time.sleep(1)
