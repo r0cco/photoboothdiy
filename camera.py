@@ -341,10 +341,10 @@ def TakePictures():
         image4 = PIL.Image.open(filename4)   
         TotalImageCount = TotalImageCount + 1
 	
-        bgimage.paste(image1, (625, 30))
-        bgimage.paste(image2, (625, 410))
+        bgimage.paste(image1, (55, 30))
+        bgimage.paste(image2, (625, 30))
         bgimage.paste(image3, (55, 410))
-        bgimage.paste(image4, (55, 30))
+        bgimage.paste(image4, (625, 410))
         # Create the final filename
         timestamp = time.time()
         Final_Image_Name = os.path.join(imagefolder, "Final_" + str(TotalImageCount)+"_"+str(timestamp) + ".png")
