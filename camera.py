@@ -161,7 +161,7 @@ def DisplayText(fontSize, textToDisplay):
             else:
                     background.blit(text, textpos)
 				
-def UpdateDisplay(messageXOffset = 0):
+def UpdateDisplay(messageYOffset = 0):
     # init global variables from main thread
     global Numeral
     global Message
@@ -186,8 +186,8 @@ def UpdateDisplay(messageXOffset = 0):
             font = pygame.font.Font(None, 100)
             text = font.render(Message, 1, (227, 157, 200))
             textpos = text.get_rect()
-            textpos.centerx = background.get_rect().centerx + messageXOffset
-            textpos.centery = background.get_rect().centery
+            textpos.centerx = background.get_rect().centerx
+            textpos.centery = background.get_rect().centery + messageYOffset
             if(ImageShowed):
                     backgroundPicture.blit(text, textpos)
             else:
@@ -407,7 +407,7 @@ def WaitForPrintingEvent():
     global Message
     global Printing
     global pygame
-    countDown = 5
+    countDown = 8
     GPIO.add_event_detect(BUTTON_PIN, GPIO.RISING)
     GPIO.add_event_callback(BUTTON_PIN, MyCallback)
     
@@ -423,7 +423,7 @@ def WaitForPrintingEvent():
         BackgroundColor = ""
         Numeral = str(countDown)
         Message = "Press the button to print"
-        UpdateDisplay(messageXOffset=100)        
+        UpdateDisplay(messageYOffset=300)        
         countDown = countDown - 1
         time.sleep(1)
 
