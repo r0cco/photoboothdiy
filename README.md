@@ -32,3 +32,20 @@ If you want to test it without a button wire on GPIO Pin 25 of the raspberry, yo
 Finally, I wanted to run the program at startup of the raspberry pi so I followed this tuto https://www.simplified.guide/linux/automatically-run-program-on-startup
 
 The script which launch at startup is on the Github: photobooth-script.sh 
+
+# NEW SETUP
+
+* download latest raspbian 
+
+* configure camera as above
+
+* ```sudo apt-get install python-cups```
+
+* configure cups as above
+
+* ```sudo apt-get install libjpeg-dev```
+
+* ```pip install pillow```
+
+
+
