@@ -23,7 +23,7 @@ TotalImageCount = 0  # Counter for Display and to monitor paper usage
 PhotosPerCart = 20  # Selphy takes 16 sheets per tray
 imagecounter = 0
 imagefolder = 'Photos'
-templatePath = os.path.join('Photos', 'Template', "template.png") #Path of template image
+templatePath = os.path.join('Photos', 'Template', "blankTemplate.png") #Path of template image
 ImageShowed = False
 Printing = False
 BUTTON_PIN = 25
@@ -319,14 +319,17 @@ def TakePictures():
 	global TotalImageCount
 
         input(pygame.event.get())
-        CountDownPhoto = "1/3"        
+        CountDownPhoto = "1/4"        
         filename1 = CapturePicture()
 
-        CountDownPhoto = "2/3"
+        CountDownPhoto = "2/4"
         filename2 = CapturePicture()
 
-        CountDownPhoto = "3/3"
+        CountDownPhoto = "3/4"
         filename3 = CapturePicture()
+        
+        CountDownPhoto = "4/4"
+        filename4 = CapturePicture()
 
         CountDownPhoto = ""
         Message = "Creating Picture..."
@@ -334,12 +337,14 @@ def TakePictures():
 
         image1 = PIL.Image.open(filename1)
         image2 = PIL.Image.open(filename2)
-        image3 = PIL.Image.open(filename3)   
+        image3 = PIL.Image.open(filename3)
+        image3 = PIL.Image.open(filename4)   
         TotalImageCount = TotalImageCount + 1
 	
         bgimage.paste(image1, (625, 30))
         bgimage.paste(image2, (625, 410))
         bgimage.paste(image3, (55, 410))
+        bgimage.paste(image4, (55, 30))
         # Create the final filename
         timestamp = time.time()
         Final_Image_Name = os.path.join(imagefolder, "Final_" + str(TotalImageCount)+"_"+str(timestamp) + ".png")
