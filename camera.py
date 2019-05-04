@@ -348,7 +348,7 @@ def TakePictures():
         bgimage.paste(image2, (625, 30))
         bgimage.paste(image3, (55, 410))
         bgimage.paste(image4, (625, 410))
-        bgimage.paste(centerIconImage, (0,0))
+        bgimage.paste(centerIconImage, (340, 220))
         # Create the final filename
         timestamp = time.time()
         Final_Image_Name = os.path.join(imagefolder, "Final_" + str(TotalImageCount)+"_"+str(timestamp) + ".png")
