@@ -391,7 +391,7 @@ def TakePictures():
                                         UpdateDisplay()
                                         time.sleep(1)
                                 else:
-                                        conn.printFile(printer_name, '/home/pi/Desktop/tempprint.png', "PhotoBooth", {})
+                                        conn.printFile(printer_name, '/home/pi/Desktop/tempprint.png', "PhotoBooth", {"orientation-requested"="4"})
                                         time.sleep(40)            
                 else:
                         Message = "We will send you your photos"
