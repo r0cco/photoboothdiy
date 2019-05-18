@@ -24,7 +24,6 @@ PhotosPerCart = 20  # Selphy takes 16 sheets per tray
 imagecounter = 0
 imagefolder = 'Photos'
 templatePath = os.path.join('Photos', 'Template', "blankTemplate.png") #Path of template image
-centerIconPath = os.path.join('Photos', 'Template', "centerIcon.png") #Path of template image
 ImageShowed = False
 Printing = False
 BUTTON_PIN = 25
@@ -342,13 +341,10 @@ def TakePictures():
         image4 = PIL.Image.open(filename4)   
         TotalImageCount = TotalImageCount + 1
 
-        centerIconImage = PIL.Image.open(centerIconPath)
-	
         bgimage.paste(image1, (55, 30))
         bgimage.paste(image2, (625, 30))
         bgimage.paste(image3, (55, 410))
         bgimage.paste(image4, (625, 410))
-        bgimage.paste(centerIconImage, (340, 220))
         # Create the final filename
         timestamp = time.time()
         Final_Image_Name = os.path.join(imagefolder, "Final_" + str(TotalImageCount)+"_"+str(timestamp) + ".png")
@@ -391,7 +387,7 @@ def TakePictures():
                                         UpdateDisplay()
                                         time.sleep(1)
                                 else:
-                                        conn.printFile(printer_name, '/home/pi/Desktop/tempprint.png', "PhotoBooth", {"orientation-requested":"4"})
+                                        conn.printFile(printer_name, '/home/pi/Desktop/tempprint.png', "PhotoBooth")
                                         time.sleep(40)            
                 else:
                         Message = "We will send you your photos"
